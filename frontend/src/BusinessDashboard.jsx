@@ -17,7 +17,7 @@ const BusinessDashboard = () => {
 
     setIsLoading(true);
     try {
-      const res = await fetch('http://localhost:3001/business-data', {
+      const res = await fetch('https://growthpro-assignment-84bk.onrender.com/business-data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -35,7 +35,7 @@ const BusinessDashboard = () => {
     setIsRegenerating(true);
     try {
       const res = await fetch(
-        `http://localhost:3001/regenerate-headline?name=${encodeURIComponent(formData.name)}&location=${encodeURIComponent(formData.location)}`
+        `https://growthpro-assignment-84bk.onrender.com/regenerate-headline?name=${encodeURIComponent(formData.name)}&location=${encodeURIComponent(formData.location)}`
       );
       const data = await res.json();
       setBusinessData((prev) => ({ ...prev, headline: data.headline }));
